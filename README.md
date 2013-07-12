@@ -7,7 +7,7 @@ The main objective is to move contacts  organisation from a folder structure to 
  Hopefully, by using these macros, you will be able to move your contacts data to in other applications,  not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name. 
 
 
-Among the duties performed by LookOut there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as VCF. 
+Among the duties performed by LookOut there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard. 
 
 LookOut is  intended for Outlook 2010. Chances there are it will work in other versions.
 You don't need to be knowledgeable with VBA to use LookOut.
@@ -341,5 +341,3 @@ where `path\to\MultivCard.vcf` is the pathname of the multi-contact vCard to be 
 
 
 
-<!--  LocalWords:  Google Thunderbird VBA IDE LookOut cls subfolders vCard vcf vCards
- -->
