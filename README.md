@@ -1,4 +1,4 @@
-LookOut   
+LookOut   {#mainpage}
 =========
 
 LookOut is a Microsoft Outlook class macro intended to manage contacts.
@@ -56,7 +56,7 @@ Installing LookOut
 
 ### If you are  knowledgeable with VBA
 
-Make sure you that security level are properly set in `Trust Centre Settings` then in  Outlook VBA IDE import the file `LookOut.cls` and set a reference to  `Microsoft Scripting Runtime` and `Windows Script Host Object Model` (the sub `ExportVcf` need them, other procedures don't).
+Make sure you that security level are properly set in `Trust Centre Settings` then in  Outlook VBA IDE import the file `LookOut.cls` and set a reference to  `Microsoft Scripting Runtime` and `Windows Script Host Object Model` (the procedures `ExportVcf` and `MultiVcf` need them, other procedures don't).
 
 If you like to make it more manually,  you can create yourself a new class module, named `LookOut` and copy the "VBA content" of  `LookOut.cls`. This means excluding the header lines containing the class module proprieties, i.e. version attributes etc.
 
@@ -86,7 +86,7 @@ Identify the  file `LookOut.cls`. It is on the same page/site/package from which
 
 Now type ALT-F11 and you will enter the VBA IDE. If not visible already, show the `Project Explorer` typing CTRL-R and the  `Immediate Window` typing  CTRL-G (or selecting them in the `View` menu).  Therefore go to menu `File -> Import File...`; a dialog windows opens, use it to import the file `LookOut.cls`. In the `Project Explorer`, you will see a new element in the `Class Modules`, named `LookOut`. 
 
-In order to export the contacts (in vCard format) you need to set the so called VBA _references_. In the VBA IDE select `Tools->References`. When the dialog opens, find and check the entries `Microsoft Scripting Runtime` and `Windows Script Host Object Model` and click `OK`. This is necessary to make the procedure `ExportVcf` work; indeed all other procedures don't need these references. 
+In order to export the contacts (in vCard format) you need to set the so called VBA _references_. In the VBA IDE select `Tools->References`. When the dialog opens, find and check the entries `Microsoft Scripting Runtime` and `Windows Script Host Object Model` and click `OK`. This is necessary to make the procedure `ExportVcf` and `MultiVcf` work; indeed all other procedures don't need these references. 
 
 You are done with setup.
 
@@ -341,3 +341,5 @@ where `path\to\MultivCard.vcf` is the pathname of the multi-contact vCard to be 
 
 
 
+<!--  LocalWords:  Google Thunderbird VBA IDE LookOut cls subfolders vCard vcf vCards
+ -->
