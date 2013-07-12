@@ -39,7 +39,7 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="el" href="class_look_out.html">LookOut</a> is a Microsoft Outlook class macro intended to manage contacts. The main objective is to move contacts organisation from a folder structure to a category structure. The former is peculiar of Outlook, so you are locked-in. Hopefully, by using these macros, you will be able to move your contacts data to in other applications, not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name.</p>
-<p>Among the duties performed by <a class="el" href="class_look_out.html">LookOut</a> there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as VCF.</p>
+<p>Among the duties performed by <a class="el" href="class_look_out.html">LookOut</a> there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard.</p>
 <p><a class="el" href="class_look_out.html">LookOut</a> is intended for Outlook 2010. Chances there are it will work in other versions. You don't need to be knowledgeable with VBA to use <a class="el" href="class_look_out.html">LookOut</a>.</p>
 <h2>Disclaimer </h2>
 <p>Despite this software helped me dramatically in my contact system migration, it is still at a beta stage: I had no time to test it thoroughly and writing sound documentation.</p>
@@ -57,7 +57,7 @@
 <p>Summing up everything you are thinking of doing will be done in Outlook, and much more, but everything will be done very slowly, and too slow for the present competition pace.</p>
 <h2>Installing <a class="el" href="class_look_out.html">LookOut</a> </h2>
 <h3>If you are knowledgeable with VBA</h3>
-<p>Make sure you that security level are properly set in <code>Trust Centre Settings</code> then in Outlook VBA IDE import the file <code>LookOut.cls</code> and set a reference to <code>Microsoft Scripting Runtime</code> and <code>Windows Script Host Object Model</code> (the sub <code>ExportVcf</code> need them, other procedures don't).</p>
+<p>Make sure you that security level are properly set in <code>Trust Centre Settings</code> then in Outlook VBA IDE import the file <code>LookOut.cls</code> and set a reference to <code>Microsoft Scripting Runtime</code> and <code>Windows Script Host Object Model</code> (the procedures <code>ExportVcf</code> and <code>MultiVcf</code> need them, other procedures don't).</p>
 <p>If you like to make it more manually, you can create yourself a new class module, named <code><a class="el" href="class_look_out.html">LookOut</a></code> and copy the "VBA content" of <code>LookOut.cls</code>. This means excluding the header lines containing the class module proprieties, i.e. version attributes etc.</p>
 <h3>If you are not knowledgeable with VBA</h3>
 <p>Of course you are supposed to have a basic understanding of Outlook, but you don't need to have a specific knowledge of Outlook macros or the language with whom they are written, Visual Basic for Applications (VBA). Anyway this is not a tutorial on Outlook macros. If you ignore completely this subject, you might find difficult to follow these lines and prefer to read some introductory material first.</p>
@@ -70,7 +70,7 @@
 <p>With this option you are notified, just once per session, of the presence of potentially risky macros. Enabling all macros without notifications adds a useless tier of risk and, of course, enabling only digitally signed macros would require a special certification procedure for macros you are going to write.</p>
 <p>Identify the file <code>LookOut.cls</code>. It is on the same page/site/package from which you are reading this document.</p>
 <p>Now type ALT-F11 and you will enter the VBA IDE. If not visible already, show the <code>Project Explorer</code> typing CTRL-R and the <code>Immediate Window</code> typing CTRL-G (or selecting them in the <code>View</code> menu). Therefore go to menu <code>File -&gt; Import File...</code>; a dialog windows opens, use it to import the file <code>LookOut.cls</code>. In the <code>Project Explorer</code>, you will see a new element in the <code>Class Modules</code>, named <code><a class="el" href="class_look_out.html">LookOut</a></code>.</p>
-<p>In order to export the contacts (in vCard format) you need to set the so called VBA <em>references</em>. In the VBA IDE select <code>Tools-&gt;References</code>. When the dialog opens, find and check the entries <code>Microsoft Scripting Runtime</code> and <code>Windows Script Host Object Model</code> and click <code>OK</code>. This is necessary to make the procedure <code>ExportVcf</code> work; indeed all other procedures don't need these references.</p>
+<p>In order to export the contacts (in vCard format) you need to set the so called VBA <em>references</em>. In the VBA IDE select <code>Tools-&gt;References</code>. When the dialog opens, find and check the entries <code>Microsoft Scripting Runtime</code> and <code>Windows Script Host Object Model</code> and click <code>OK</code>. This is necessary to make the procedure <code>ExportVcf</code> and <code>MultiVcf</code> work; indeed all other procedures don't need these references.</p>
 <p>You are done with setup.</p>
 <p>Anyway, note that you can undock, resize and close every component of the VBA IDE, much like every Windows window. As you will run macros through <code>Immediate Window</code> and read here information printed by the macros themselves, you might want adjust it a little.</p>
 <h2>Outlook folder structure </h2>
@@ -179,7 +179,7 @@ Set ol = Nothing
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 12 2013 22:38:58 for LookOut by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 12 2013 23:23:31 for LookOut by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

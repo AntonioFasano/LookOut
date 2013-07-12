@@ -9,7 +9,8 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 
 
-' (shell-command (substitute-in-file-name "$home/Desktop/outlook/LookoutClass/Build.cmd"))
+' (shell-command (substitute-in-file-name "$home/Desktop/outlook/git/source/build.cmd"))
+
  
 '/**
 ' A library to free from Outlook Contacts tax.

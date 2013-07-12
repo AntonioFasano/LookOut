@@ -1,5 +1,5 @@
-LookOut   {#mainpage}
-=========
+LookOut{#mainpage}
+==================
 
 LookOut is a Microsoft Outlook class macro intended to manage contacts.
 The main objective is to move contacts  organisation from a folder structure to a
