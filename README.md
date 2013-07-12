@@ -1,7 +1,7 @@
-LookOut   {#mainpage}
-=========================
+LookOut   
+=========
 
-LookOut is an Microsoft Outlook class macro intended to manage contacts.
+LookOut is a Microsoft Outlook class macro intended to manage contacts.
 The main objective is to move contacts  organisation from a folder structure to a
  category structure. The former is peculiar of Outlook, so you are locked-in.
  Hopefully, by using these macros, you will be able to move your contacts data to in other applications,  not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name. 
