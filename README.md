@@ -1,7 +1,7 @@
 LookOut 
 ==================
 
-LookOut is a Microsoft Outlook class macro intended to manage contacts.
+LookOut Contact Freedom is a Microsoft Outlook class macro intended to manage contacts.
 The main objective is to move contacts  organisation from a folder structure to a
  category structure. The former is peculiar of Outlook, so you are locked-in.
  Hopefully, by using the procedures in this class, you will be able to move your contacts data to other applications,  not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name. 
@@ -11,6 +11,10 @@ Among the duties performed by LookOut there are: the conversion of contact folde
 
 LookOut is  intended for Outlook 2010. Chances there are it will work in other versions.
 You don't need to be knowledgeable with VBA to use LookOut.
+
+
+_This project is  by no means connected with Mike Belshe Outlook search add-in._
+
 
 Disclaimer
 ----------
