@@ -4,21 +4,20 @@ LookOut{#mainpage}
 LookOut is a Microsoft Outlook class macro intended to manage contacts.
 The main objective is to move contacts  organisation from a folder structure to a
  category structure. The former is peculiar of Outlook, so you are locked-in.
- Hopefully, by using these macros, you will be able to move your contacts data to in other applications,  not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name. 
+ Hopefully, by using the procedures in this class, you will be able to move your contacts data to other applications,  not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name. 
 
 
-Among the duties performed by LookOut there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard. 
+Among the duties performed by LookOut there are: the conversion of contact folders in categories; the export of entire folder trees as single-contact or multi-contact vCards, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard. 
 
 LookOut is  intended for Outlook 2010. Chances there are it will work in other versions.
 You don't need to be knowledgeable with VBA to use LookOut.
-
 
 Disclaimer
 ----------
 
 Despite this software  helped me dramatically in my contact system migration, it  is still at a beta stage: I had no time to test it thoroughly and writing sound documentation. 
 
-As the  macros  described here affect  Outlook data files, I strongly encourage to backup them  before playing with LookOut. To this end I  suggest that you identify the Outlook data file(s) containing critical data, close Outlook and make a copy of the files. If something goes wrong, close Outlook again and replace the  data files with the back-upped copy.
+As the  macros  described here affect  Outlook Data Files, I strongly encourage to backup them  before playing with LookOut. To this end I  suggest that you identify the Outlook data file(s) containing critical data, close Outlook and make a copy of the files. If something goes wrong, close Outlook again and replace the  data files with the back-upped copy.
 
 If you want to learn more about Outlook data file read ahead the section "Outlook folder structure".
 
@@ -30,7 +29,7 @@ Motivation
 
 I am a seasoned user of Microsoft Outlook, but I don't like it. Unfortunately I have been stuffing contacts in it for about 15 years. Migrating contacts to a different platform is not simple since they are stored in a very deep folder tree. Contact folders, and particularly nested contact folders, are a feature rather specific of Outlook. Categorizing contacts in some way is crucial to me, but every contact system has a specific classification approach (folders, categories, group, tags etc.) making it difficult to share contact data and preserving the original structure. Not to mention that, while classifying mails is always possible, many applications still have no facilities alike for contacts. Notably Thunderbird has no labelling for contacts and your choices are limited to the address book.
 
-Recently I discovered a Thunderbird extension adding categories to contacts and including the possibility to search contacts by category. MoreFunctionsForAddressBook, [MoreFunctionsForAddressBook](http://nic-nac-project.de/~kaosmos/morecols-en.html)
+Recently I discovered a Thunderbird extension adding categories to contacts and including the possibility to search contacts by category: [MoreFunctionsForAddressBook](http://nic-nac-project.de/~kaosmos/morecols-en.html)
 
 The time had come for the big switch.
 
@@ -42,9 +41,9 @@ Outlook limitations
 
 Outlook is probably one of the most powerful PIM system and these macros are partly a consequence and an evidence of that. Outlook is also very mouse oriented. In a typical session you move back and forth from the navigation pane to the content area. If the navigation tree is very simple, few nodes and a low nesting level, then you can stand the mouse journeys, when not a keyboard addict; with a very deep structure, moving from a contact folder to a mail folder and then to the calendar etc. is very time consuming.
 
-Keyboard shortcuts could help, but their design is rather weird. With Ctrl-6 you visualize the contact folders in the navigation pane (yes, CTRL-6), then you'd like to scroll the tree with the arrows but, surprise, the focus is not on the folder. Even if you help yourself with the mouse and select an upper node, the focus is immediately moved away (very unnaturally). To keep the selection you have to double click, but not too fast or you will activate the rename feature.
+Keyboard shortcuts could help, but their design is rather weird. With CTRL-6 you visualize the contact folders in the navigation pane (yes, CTRL-6), then you'd like to scroll the tree with the arrows but, surprise, the focus is not on the folder. Even if you help yourself with the mouse and select an upper node, the focus is immediately moved away (very unnaturally). To keep the selection you have to double click, but not too fast or you will activate the rename feature.
 
-Real time search could really help to get to the item you need. Here again Outlook has plenty of powerful options to search in every possible way, but you have to click way t0o icons and dialogs, so it's not really real time. No comparison with Gmail, where you write /Chess and you immediately get all your contacts playing your favourite game.
+Real time search could really help to get to the item you need. Here again Outlook has plenty of powerful options to search in every possible way, but you have to click way too icons and dialogs, so it's not really real time. No comparison with Gmail, where you write /Chess and you immediately get all your contacts playing your favourite game.
 
 My humble opinion is that Outlook is a very mature product. When it was introduced, writing an email and searching for the recipient's details was something quite occasional in the day of a computer user, therefore the responsiveness of the interface hardly affected the overall user experience. Nowadays, since we process electronically an uncountable number of social tasks per day, the total valuable time spent in searching the proper folder with the proper item can entail a huge impact on productivity and on the level of stress at the end of the day.
 
@@ -92,15 +91,6 @@ You are done with setup.
 
 Anyway, note that you can   undock, resize and close every component of the VBA IDE, much like every Windows window. As you will run macros through `Immediate Window` and read  here information printed by the macros themselves, you might want adjust it a little. 
 
-
-<!--  
-Go to menu `Insert -> Class Module` (there is also a button for this, but it may not insert a module item, if not set so). In the `Project Explorer`, you will see a new element in the `Class Modules' node, possibly named like ``Module 1''. Name it something more meaningful, such as ``catman''. To do this, select the module name and type F4. A properties bar will appear, where you have the possibility to change the name field of the module as you like.
-
-At this point make your IDE yours. First, if not visible, show the `Immediate Window` via CTRL-G and show the `Project Explorer` typing CTRL-R (or use the `View` menu).
-You can undock, resize and close every bar of the IDE, much like every Windows window. Note that, in the following you will need only the central code window (resizable, but not closable) and the `Immediate Window`. The latter is used to insert commands on behalf of the user (in our case to run the macros) or to print information on behalf of the macros themselves.
-Please note that after typing subroutines/functions in the code window, they will appear in the left drop down menu as an item in alphabetical order, so you will be able to easily browse them.
-
- -->
 
 Outlook folder structure
 ------------------------
@@ -153,7 +143,7 @@ A typical session consists of typing lines like these:
     Set ol = Nothing
 
 
-`Set OL = new LookOut` initializes the program (that is the class `LookOut`). We then issue the commands to accomplish specific tasks and eventually we do some memory cleanup with  `Set OL = Nothing`.
+`Set ol = new LookOut` initializes the program (that is the class `LookOut`). We then issue the commands to accomplish specific tasks and eventually we do some memory clean-up with  `Set ol = Nothing`.
 
 Normally you need the initialisation only once per session, that is when you open Outlook and start using LookOut. Some special events, such when you click on the reset button in VBA IDE, delete the object `ol`. Therefore, should  you get an `object required` error, simply issue `Set ol = new LookOut` again.
 
@@ -256,7 +246,7 @@ and
 
 ### Flatten folder
 
-Once we map folders to categories, with `Folder2Cat`, there is no need to to keep contacts in separate folders. We can can put flatten them into a single folder; so the process of  transforming the folder strutcture into  the category structure is completed.
+Once we map folders to categories, with `Folder2Cat`, there is no need to to keep contacts in separate folders. We can can put flatten them into a single folder; so the process of  transforming the folder structure into  the category structure is completed.
 
 To flatten contacts into the tree whose parent folder is `\\My Store\Tree\Parent` into the single folder `\\My Store\path\to\FlatFolder` issue:
 
@@ -323,7 +313,7 @@ will export from the global default contact folder.
 The export folder path can have environment  variables, e.g. `%%USERPROFILE%\Desktop\ExportVcf`.
 
 The name of  the `.vcf`-files is given by the  `FileAs` field of the contacts. 
-Note that, when copying contacts to `export\path`, the folder structure is not kept. Therefore, if the same contact is stored in different folders, you endup with duplicate files.
+Note that, when copying contacts to `export\path`, the folder structure is not kept. Therefore, if the same contact is stored in different folders, you end-up with duplicate files.
 
 If a duplicate contact is found, the procedure stops exporting further contacts and skips to the next folder in the queue, if any.
 
@@ -341,5 +331,11 @@ where `path\to\MultivCard.vcf` is the pathname of the multi-contact vCard to be 
 
 
 
-<!--  LocalWords:  Google Thunderbird VBA IDE LookOut cls subfolders vCard vcf vCards
+<!-- Local Variables: -->
+<!-- mode: markdown -->
+<!-- mode: visual-line -->
+<!-- End: -->
+<!-- Local IspellDict: english -->
+<!--  LocalWords:  LookOut Google Thunderbird vCards vCard VBA etc  MoreFunctionsForAddressBook PIM shortcuts  dialogs Gmail IDE cls setup ALT dialog undock subfolders textbox Filename CTRL
  -->
+

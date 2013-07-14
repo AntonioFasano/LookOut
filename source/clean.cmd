@@ -1,5 +1,12 @@
+::Run before commit to Github
+::Cleanup and creation of Github readme
+
+ 
 echo LookOut > ..\readme.md
 FINDSTR  /V /C:"LookOut{#mainpage}"  readme.md >> ..\readme.md
-del readme.md~
-del LookOut.cls~
 
+del *.cfg~
+del *.cls~
+del *.cmd~
+del *.js~
+del *.md~

@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 
-
+'  In case you use Emacs
 ' (shell-command (substitute-in-file-name "$home/Desktop/outlook/git/source/build.cmd"))
 
  

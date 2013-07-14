@@ -1,5 +1,5 @@
 /*
- **  Antonio Fasano - VBA Filter for Doxygen **
+ **  Antonio Fasano - VBA-class Filter for Doxygen **
  **              2013 - v. 11                  **
 */
 

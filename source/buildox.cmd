@@ -1,4 +1,5 @@
-cd %~dp0
+::Build documentation with Doxygen plus my VBA-class filter 
 
-"%ProgramW6432%\doxygen\bin\doxygen" lookout.cfg
+cd %~dp0
+"%ProgramW6432%\doxygen\bin\doxygen.exe" lookout.cfg
 
