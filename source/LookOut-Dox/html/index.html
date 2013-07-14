@@ -38,21 +38,21 @@
 <div class="title"><a class="el" href="class_look_out.html">LookOut</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="el" href="class_look_out.html">LookOut</a> is a Microsoft Outlook class macro intended to manage contacts. The main objective is to move contacts organisation from a folder structure to a category structure. The former is peculiar of Outlook, so you are locked-in. Hopefully, by using these macros, you will be able to move your contacts data to in other applications, not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name.</p>
-<p>Among the duties performed by <a class="el" href="class_look_out.html">LookOut</a> there are: the conversion of contact folders in categories; the export of entire folder trees, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard.</p>
+<div class="textblock"><p><a class="el" href="class_look_out.html">LookOut</a> is a Microsoft Outlook class macro intended to manage contacts. The main objective is to move contacts organisation from a folder structure to a category structure. The former is peculiar of Outlook, so you are locked-in. Hopefully, by using the procedures in this class, you will be able to move your contacts data to other applications, not based on a folder classification (e.g. Google contacts or Thunderbird) without losing the structure, hence the name.</p>
+<p>Among the duties performed by <a class="el" href="class_look_out.html">LookOut</a> there are: the conversion of contact folders in categories; the export of entire folder trees as single-contact or multi-contact vCards, the detection and management of duplicate contacts; the inclusion of a category field when exporting as vCard.</p>
 <p><a class="el" href="class_look_out.html">LookOut</a> is intended for Outlook 2010. Chances there are it will work in other versions. You don't need to be knowledgeable with VBA to use <a class="el" href="class_look_out.html">LookOut</a>.</p>
 <h2>Disclaimer </h2>
 <p>Despite this software helped me dramatically in my contact system migration, it is still at a beta stage: I had no time to test it thoroughly and writing sound documentation.</p>
-<p>As the macros described here affect Outlook data files, I strongly encourage to backup them before playing with <a class="el" href="class_look_out.html">LookOut</a>. To this end I suggest that you identify the Outlook data file(s) containing critical data, close Outlook and make a copy of the files. If something goes wrong, close Outlook again and replace the data files with the back-upped copy.</p>
+<p>As the macros described here affect Outlook Data Files, I strongly encourage to backup them before playing with <a class="el" href="class_look_out.html">LookOut</a>. To this end I suggest that you identify the Outlook data file(s) containing critical data, close Outlook and make a copy of the files. If something goes wrong, close Outlook again and replace the data files with the back-upped copy.</p>
 <p>If you want to learn more about Outlook data file read ahead the section "Outlook folder structure".</p>
 <h2>Motivation </h2>
 <p>I am a seasoned user of Microsoft Outlook, but I don't like it. Unfortunately I have been stuffing contacts in it for about 15 years. Migrating contacts to a different platform is not simple since they are stored in a very deep folder tree. Contact folders, and particularly nested contact folders, are a feature rather specific of Outlook. Categorizing contacts in some way is crucial to me, but every contact system has a specific classification approach (folders, categories, group, tags etc.) making it difficult to share contact data and preserving the original structure. Not to mention that, while classifying mails is always possible, many applications still have no facilities alike for contacts. Notably Thunderbird has no labelling for contacts and your choices are limited to the address book.</p>
-<p>Recently I discovered a Thunderbird extension adding categories to contacts and including the possibility to search contacts by category. MoreFunctionsForAddressBook, <a href="http://nic-nac-project.de/~kaosmos/morecols-en.html">MoreFunctionsForAddressBook</a></p>
+<p>Recently I discovered a Thunderbird extension adding categories to contacts and including the possibility to search contacts by category: <a href="http://nic-nac-project.de/~kaosmos/morecols-en.html">MoreFunctionsForAddressBook</a></p>
 <p>The time had come for the big switch.</p>
 <h2>Outlook limitations </h2>
 <p>Outlook is probably one of the most powerful PIM system and these macros are partly a consequence and an evidence of that. Outlook is also very mouse oriented. In a typical session you move back and forth from the navigation pane to the content area. If the navigation tree is very simple, few nodes and a low nesting level, then you can stand the mouse journeys, when not a keyboard addict; with a very deep structure, moving from a contact folder to a mail folder and then to the calendar etc. is very time consuming.</p>
-<p>Keyboard shortcuts could help, but their design is rather weird. With Ctrl-6 you visualize the contact folders in the navigation pane (yes, CTRL-6), then you'd like to scroll the tree with the arrows but, surprise, the focus is not on the folder. Even if you help yourself with the mouse and select an upper node, the focus is immediately moved away (very unnaturally). To keep the selection you have to double click, but not too fast or you will activate the rename feature.</p>
-<p>Real time search could really help to get to the item you need. Here again Outlook has plenty of powerful options to search in every possible way, but you have to click way t0o icons and dialogs, so it's not really real time. No comparison with Gmail, where you write /Chess and you immediately get all your contacts playing your favourite game.</p>
+<p>Keyboard shortcuts could help, but their design is rather weird. With CTRL-6 you visualize the contact folders in the navigation pane (yes, CTRL-6), then you'd like to scroll the tree with the arrows but, surprise, the focus is not on the folder. Even if you help yourself with the mouse and select an upper node, the focus is immediately moved away (very unnaturally). To keep the selection you have to double click, but not too fast or you will activate the rename feature.</p>
+<p>Real time search could really help to get to the item you need. Here again Outlook has plenty of powerful options to search in every possible way, but you have to click way too icons and dialogs, so it's not really real time. No comparison with Gmail, where you write /Chess and you immediately get all your contacts playing your favourite game.</p>
 <p>My humble opinion is that Outlook is a very mature product. When it was introduced, writing an email and searching for the recipient's details was something quite occasional in the day of a computer user, therefore the responsiveness of the interface hardly affected the overall user experience. Nowadays, since we process electronically an uncountable number of social tasks per day, the total valuable time spent in searching the proper folder with the proper item can entail a huge impact on productivity and on the level of stress at the end of the day.</p>
 <p>Summing up everything you are thinking of doing will be done in Outlook, and much more, but everything will be done very slowly, and too slow for the present competition pace.</p>
 <h2>Installing <a class="el" href="class_look_out.html">LookOut</a> </h2>
@@ -99,7 +99,7 @@ ol.Commnad2 ...
 ...
 
 Set ol = Nothing
-</pre><p><code>Set OL = new <a class="el" href="class_look_out.html">LookOut</a></code> initializes the program (that is the class <code><a class="el" href="class_look_out.html">LookOut</a></code>). We then issue the commands to accomplish specific tasks and eventually we do some memory cleanup with <code>Set OL = Nothing</code>.</p>
+</pre><p><code>Set ol = new <a class="el" href="class_look_out.html">LookOut</a></code> initializes the program (that is the class <code><a class="el" href="class_look_out.html">LookOut</a></code>). We then issue the commands to accomplish specific tasks and eventually we do some memory clean-up with <code>Set ol = Nothing</code>.</p>
 <p>Normally you need the initialisation only once per session, that is when you open Outlook and start using <a class="el" href="class_look_out.html">LookOut</a>. Some special events, such when you click on the reset button in VBA IDE, delete the object <code>ol</code>. Therefore, should you get an <code>object required</code> error, simply issue <code>Set ol = new <a class="el" href="class_look_out.html">LookOut</a></code> again.</p>
 <h3>Get Default Folders</h3>
 <p>As many commands accept as input the default contact folder, you may want to learn its path with respect to Outlook tree nodes.</p>
@@ -142,7 +142,7 @@ Set ol = Nothing
 </pre><p>and </p>
 <pre class="fragment">ol.FillEmpty DefaultFolder:=True
 </pre><h3>Flatten folder</h3>
-<p>Once we map folders to categories, with <code>Folder2Cat</code>, there is no need to to keep contacts in separate folders. We can can put flatten them into a single folder; so the process of transforming the folder strutcture into the category structure is completed.</p>
+<p>Once we map folders to categories, with <code>Folder2Cat</code>, there is no need to to keep contacts in separate folders. We can can put flatten them into a single folder; so the process of transforming the folder structure into the category structure is completed.</p>
 <p>To flatten contacts into the tree whose parent folder is <code>\\My Store\Tree\Parent</code> into the single folder <code>\\My Store\path\to\FlatFolder</code> issue:</p>
 <pre class="fragment">ol.FlattenFolderCopy "\\My Store\path\to\TreeParent", "\\My Store\path\to\FlatFolder"
 </pre><p>In case you want to copy and delete contacts in <code>\\My Store\Tree\Parent</code>, issue: </p>
@@ -169,7 +169,7 @@ Set ol = Nothing
 <pre class="fragment">ol.ExportVcf  "export\path", DefaultFolder:=True
 </pre><p>will export from the global default contact folder.</p>
 <p>The export folder path can have environment variables, e.g. <code>%USERPROFILE%\Desktop\ExportVcf</code>.</p>
-<p>The name of the <code>.vcf</code>-files is given by the <code>FileAs</code> field of the contacts. Note that, when copying contacts to <code>export\path</code>, the folder structure is not kept. Therefore, if the same contact is stored in different folders, you endup with duplicate files.</p>
+<p>The name of the <code>.vcf</code>-files is given by the <code>FileAs</code> field of the contacts. Note that, when copying contacts to <code>export\path</code>, the folder structure is not kept. Therefore, if the same contact is stored in different folders, you end-up with duplicate files.</p>
 <p>If a duplicate contact is found, the procedure stops exporting further contacts and skips to the next folder in the queue, if any.</p>
 <p><code>ExportVcf</code> produces a vCard for each contact. Some applications, such as Gmail, require a single vCards to be combined in a single multi-contact vCard.</p>
 <p>To combine the vCards in <code>export\path</code> into a single multi-contact vCard, issue: </p>
@@ -179,7 +179,7 @@ Set ol = Nothing
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 12 2013 23:23:31 for LookOut by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 01:58:49 for LookOut by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
